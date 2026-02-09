@@ -4,6 +4,12 @@ import DealsChart from "./chart"
 
 function App() {
   const [count, setCount] = useState(0)
+  const data = [
+    { id: 1, deal: "Deal A", amount: "$5000", status: "Closed" },
+    { id: 2, deal: "Deal B", amount: "$3000", status: "Pending" },
+    { id: 3, deal: "Deal C", amount: "$7000", status: "Closed" },
+  ];
+
 
   return (
     <>
@@ -64,12 +70,41 @@ function App() {
         </div>
 
         {/* Right Content */}
-        <div className="flex-1 flex flex-col p-4 h-screen overflow-y-auto">
-          <h2>Deals Dashboard</h2>
-          <div className='flex flex-wrap'>
-          <div ><DealsChart/></div>
-          <div className="flex-1 border-2 m-2 p-4 w-50 h-20 min-w-[45%]">report-1</div>
-          <div className="flex-1 border-2 m-2 p-4 w-50 h-20 min-w-[45%]">report-2</div>
+        <div className=" flex flex-col p-4 h-screen overflow-y-auto">
+          <h2 className="text-xl font-bold mb-4">Deals Dashboard</h2>
+
+          <div className='flex flex-row gap-4 w-200'>
+          <div className="flex-1 border-2 p-4 min-w-[40%] ">
+            <div className='flex justify-between'>
+            <h2>recentaly created</h2>
+            <h2>last 30 day</h2>
+            </div>
+            <div className="overflow-x-auto">
+      <table className="min-w-full border-collapse border border-gray-300">
+        <thead className="bg-gray-100">
+          <tr>
+            <th className="border border-gray-300 px-4 py-2 text-left">ID</th>
+            <th className="border border-gray-300 px-4 py-2 text-left">Deal</th>
+            <th className="border border-gray-300 px-4 py-2 text-left">Amount</th>
+            <th className="border border-gray-300 px-4 py-2 text-left">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row) => (
+            <tr key={row.id} className="hover:bg-gray-50">
+              <td className="border border-gray-300 px-4 py-2">{row.id}</td>
+              <td className="border border-gray-300 px-4 py-2">{row.deal}</td>
+              <td className="border border-gray-300 px-4 py-2">{row.amount}</td>
+              <td className="border border-gray-300 px-4 py-2">{row.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+
+          </div>
+          <div className="flex-1 border-2 p-4 bg-gray-300 "><DealsChart/></div>
           </div>
           
         </div>

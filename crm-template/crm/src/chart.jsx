@@ -16,7 +16,7 @@ export default function DealsChart() {
   return (
     <div className="border p-4 rounded shadow bg-white">
       <h2 className="text-lg font-bold mb-2">Deals Overview</h2>
-      <Chart options={chartOptions} series={chartSeries} type="line" height={800} />
+      <Chart options={chartOptions} series={chartSeries} type="bar" height={300} />
     </div>
   );
 }
