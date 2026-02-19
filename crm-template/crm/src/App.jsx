@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import DealsChart from "./chart";
+import Contact from "./assets/components/crm/contact";
 import Wonchart from "./wonchart";
+import {BrowserRouter, Route, Routes,Link } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +28,17 @@ function App() {
 
   return (
     <>
+     <BrowserRouter>
+      <nav>
+        <Link to ="/contact">Contact</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+
+
       <div className="fixed top-0 left-0 right-0 flex justify-between bg-gray-50 shadow-md">
         <div className="flex gap-2">
           <div className="font-bold items-center flex ml-4">crm</div>
@@ -54,63 +67,28 @@ function App() {
 
             <ul>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded"
-                >
-                  💰 Deals Dashboard
-                </a>
+                <a href="#" className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded">💰 Deals Dashboard </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded"
-                >
-                  👥 Leads Dashboard
-                </a>
+                <a href="#" className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded">👥 Leads Dashboard</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded"
-                >
-                  📋 Project Dashboard
-                </a>
+                <a href="#" className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded">📋 Project Dashboard</a>
               </li>
             </ul>
             <p className="p-4 font-bold">Crm</p>
             <ul>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded"
-                >
-                  contacts
-                </a>
+                <a href="#" className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded" > Contacts </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded"
-                >
-                  companies
-                </a>
+                <a href="#" className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded" > Companies </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded"
-                >
-                  deals
-                </a>
+                <a href="#" className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded"> Deals </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded"
-                >
-                  leads
-                </a>
+                <a href="#" className="flex items-center px-4 py-2 text-gray-700 hover:text-red-500 rounded">Leads</a>
               </li>
             </ul>
           </div>
