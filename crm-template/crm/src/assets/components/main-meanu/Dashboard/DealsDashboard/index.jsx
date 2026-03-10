@@ -98,8 +98,8 @@ const Deal =()=>{
           
         </div>
 
-                    </div>
-                    </>
+         </div>
+           </>
     )
 }
 export default Deal

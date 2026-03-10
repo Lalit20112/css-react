@@ -11,7 +11,7 @@ function App() {
   return (
     <>
     
-       <BrowserRouter>
+     <BrowserRouter>
 
 
       <div className="fixed top-0 left-0 right-0 flex justify-between bg-gray-50 shadow-md">
@@ -33,7 +33,7 @@ function App() {
         </div>
       </div>
 
-      <div className="flex h-screen mt-16">
+      <div className="flex h-screen mt-16 ">
         {/* Sidebar */}
 
         <div className="bg-gray-50 shadow-md w-64  overflow-y-auto h-screen border-r-1 ">
